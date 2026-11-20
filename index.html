@@ -15,7 +15,7 @@
     --creme:#fbf7f2; --encre:#2f2a2b; --gris:#6b6365;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
   body{font-family:'Nunito Sans',system-ui,sans-serif;color:var(--encre);background:var(--creme);line-height:1.6}
   h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15}
   a{color:inherit}
@@ -96,8 +96,53 @@
   .form-note{display:none;margin-top:.8rem;color:var(--sauge);font-weight:600}
   .map{position:relative;border-radius:18px;overflow:hidden;min-height:420px;box-shadow:0 8px 24px rgba(47,42,43,.06)}
   .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* Menu burger */
+  .burger{display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:10px}
+  .burger span{display:block;width:24px;height:2px;background:var(--encre);border-radius:2px;transition:transform .3s,opacity .3s}
+  .burger.ouvert span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.ouvert span:nth-child(2){opacity:0}
+  .burger.ouvert span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  /* Pas de zoom au survol sur écran tactile */
+  @media (hover:none){.grille .carte:hover{transform:none;box-shadow:0 8px 24px rgba(47,42,43,.06)} .grille .carte:hover .photo{transform:none}}
+  /* Téléphone */
+  @media (max-width:760px){
+    .maquette{font-size:.72rem;padding:.4rem .8rem}
+    .nav{padding:.6rem 1rem;position:relative}
+    .logo{font-size:1.45rem}
+    .logo-box{width:44px;height:44px;font-size:.52rem}
+    .burger{display:flex}
+    nav{position:absolute;top:100%;left:0;right:0;background:var(--creme);border-bottom:1px solid #eadfd6;box-shadow:0 12px 24px rgba(47,42,43,.1);display:flex;flex-direction:column;max-height:0;overflow:hidden;transition:max-height .35s ease}
+    nav.ouvert{max-height:320px}
+    nav a{margin:0;padding:1rem 1.4rem;font-size:1.05rem;border-top:1px solid #f0e7e1}
+    nav a::after{display:none}
+    .hero{padding:4.2rem 1.1rem 4.8rem}
+    .badge{font-size:.78rem;padding:.35rem .9rem;margin-bottom:1.1rem}
+    .hero h1{font-size:2.35rem}
+    .hero p{font-size:1rem;margin:1rem auto 1.6rem}
+    .btn{display:block;width:100%;max-width:320px;margin:.5rem auto;text-align:center}
+    section{padding:3.2rem 1.1rem}
+    .titre{margin-bottom:1.8rem}
+    .titre h2{font-size:2rem}
+    .grille{grid-template-columns:1fr;gap:1.1rem}
+    .carte{padding:1.4rem}
+    .photo-wrap{margin:-1.4rem -1.4rem 1rem}
+    .carte h3{font-size:1.4rem}
+    .etapes{grid-template-columns:1fr 1fr;gap:1.4rem .8rem}
+    .etape h3{font-size:1.2rem}
+    .etape p{font-size:.9rem}
+    .abo{padding:1.6rem;gap:1.2rem}
+    .abo h2{font-size:1.9rem}
+    .bouquet{display:none}
+    .infos{grid-template-columns:1fr;gap:1rem}
+    .contact-zone{grid-template-columns:1fr}
+    .form{padding:1.4rem}
+    .form .btn{max-width:none}
+    .map,.map iframe{min-height:300px}
+    footer{font-size:.8rem;padding:1.5rem 1rem}
+  }
   footer{background:var(--encre);color:#d9cfd1;text-align:center;padding:2rem 1rem;font-size:.9rem}
-  @media(max-width:640px){nav a{margin-left:.8rem;font-size:.85rem} .nav{flex-direction:column;gap:.4rem} .grille .carte:hover{transform:scale(1.03)}}
+  
 </style>
 </head>
 <body>
@@ -107,7 +152,8 @@
 <header>
   <div class="nav">
     <a class="marque" href="#"><span class="logo-box">Votre<br>logo</span><span class="logo">Bar à <span>Fleurs</span></span></a>
-    <nav>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+    <nav id="menu">
       <a href="#creations">Créations</a>
       <a href="#evenements">Événements</a>
       <a href="#abonnement">Abonnements</a>
@@ -214,5 +260,9 @@
   <p>Maquette © 2026 Kylian Viller, développeur web à Belfort · Proposition non officielle · Photos : Unsplash</p>
 </footer>
 
+<script>
+  function toggleMenu(b){var m=document.getElementById('menu');var o=m.classList.toggle('ouvert');b.classList.toggle('ouvert',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu')}
+  document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){var m=document.getElementById('menu');if(m.classList.contains('ouvert')){toggleMenu(document.querySelector('.burger'))}})});
+</script>
 </body>
 </html>
