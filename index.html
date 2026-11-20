@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Bar à Fleurs – Artisan fleuriste à Grandvillars</title>
+<meta name="description" content="Bar à Fleurs, artisan fleuriste à Grandvillars : bouquets, plantes, compositions pour mariage, baptême et deuil, abonnements floraux et livraison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose:#c8506a; --rose-clair:#f6dde2; --sauge:#6f8f72; --sauge-clair:#e4ece3;
+    --creme:#fbf7f2; --encre:#2f2a2b; --gris:#6b6365;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito Sans',system-ui,sans-serif;color:var(--encre);background:var(--creme);line-height:1.6}
+  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15}
+  a{color:inherit}
+  .maquette{background:var(--encre);color:#fff;text-align:center;font-size:.85rem;padding:.5rem 1rem}
+  header{position:sticky;top:0;z-index:10;background:rgba(251,247,242,.94);backdrop-filter:blur(6px);border-bottom:1px solid #eadfd6}
+  .nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--rose);text-decoration:none}
+  .logo span{color:var(--sauge)}
+  nav a{text-decoration:none;margin-left:1.4rem;font-weight:600;font-size:.95rem;color:var(--gris)}
+  nav a:hover{color:var(--rose)}
+  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--rose-clair),var(--sauge-clair));padding:5.5rem 1.25rem 6rem;text-align:center}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);color:var(--encre)}
+  .hero h1 em{color:var(--rose);font-style:italic}
+  .hero p{max-width:620px;margin:1.2rem auto 2rem;font-size:1.15rem;color:var(--gris)}
+  .badge{display:inline-block;background:#fff;color:var(--rose);font-weight:700;border-radius:999px;padding:.4rem 1.1rem;margin-bottom:1.4rem;font-size:.9rem;box-shadow:0 4px 14px rgba(200,80,106,.15)}
+  .btn{display:inline-block;background:var(--rose);color:#fff;text-decoration:none;font-weight:700;padding:.85rem 1.8rem;border-radius:999px;margin:.3rem;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.alt{background:#fff;color:var(--sauge);border:2px solid var(--sauge)}
+  .petale{position:absolute;border-radius:60% 40% 60% 40%;opacity:.35}
+  .p1{width:180px;height:180px;background:var(--rose);top:-40px;left:-50px;transform:rotate(25deg)}
+  .p2{width:140px;height:140px;background:var(--sauge);bottom:-50px;right:6%;transform:rotate(-20deg)}
+  .p3{width:70px;height:70px;background:var(--rose);top:30%;right:12%}
+  section{padding:4.5rem 1.25rem}
+  .wrap{max-width:1100px;margin:auto}
+  .titre{text-align:center;margin-bottom:2.6rem}
+  .titre h2{font-size:2.5rem}
+  .titre p{color:var(--gris);margin-top:.4rem}
+  .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+  .carte{background:#fff;border-radius:18px;padding:1.8rem;box-shadow:0 8px 24px rgba(47,42,43,.06);border-top:5px solid var(--rose-clair)}
+  .carte:nth-child(even){border-top-color:var(--sauge-clair)}
+  .carte{overflow:hidden} .carte:has(.photo){border-top:0}
+  .photo{display:block;aspect-ratio:10/7;object-fit:cover}
+  .carte h3{font-size:1.5rem;margin-bottom:.4rem}
+  .carte p{color:var(--gris);font-size:.97rem}
+  .bande{background:var(--sauge);color:#fff}
+  .bande .titre p{color:#e7efe6}
+  .etapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem;text-align:center}
+  .etape .num{width:52px;height:52px;border-radius:50%;background:#fff;color:var(--sauge);font-weight:700;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem}
+  .abo{display:flex;flex-wrap:wrap;gap:2rem;align-items:center;background:#fff;border-radius:22px;padding:2.5rem;box-shadow:0 8px 24px rgba(47,42,43,.06)}
+  .abo .txt{flex:1 1 320px}
+  .abo h2{font-size:2.3rem;margin-bottom:.6rem}
+  .abo ul{list-style:none;margin:1rem 0 1.4rem}
+  .abo li{padding:.3rem 0 .3rem 1.6rem;position:relative}
+  .abo li::before{content:"";position:absolute;left:.3rem;top:.85rem;width:8px;height:8px;border-radius:50%;background:var(--rose)}
+  .bouquet{flex:0 1 260px;height:260px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f3a9b8 0 18%,transparent 19%),radial-gradient(circle at 62% 30%,#fbd3a8 0 15%,transparent 16%),radial-gradient(circle at 50% 55%,#c8506a 0 17%,transparent 18%),radial-gradient(circle at 30% 65%,#e9c3e6 0 14%,transparent 15%),radial-gradient(circle at 70% 62%,#f7c6d0 0 15%,transparent 16%),var(--sauge-clair);margin:auto}
+  .infos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem}
+  .infos .carte p{margin:.25rem 0}
+  .ph{color:var(--rose);font-weight:700}
+
+  .marque{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+  .logo-box{width:54px;height:54px;border:2px dashed var(--rose);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.62rem;font-weight:700;line-height:1.15;color:var(--rose);text-transform:uppercase;letter-spacing:.04em;background:#fff}
+  /* Effets au survol */
+  nav a{position:relative;transition:color .2s}
+  nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--rose);transition:width .25s}
+  nav a:hover::after{width:100%}
+  .btn{transition:transform .2s,box-shadow .2s,background .2s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(200,80,106,.3)}
+  .btn.alt:hover{background:var(--sauge);color:#fff}
+  .grille .carte{transition:transform .35s ease,box-shadow .35s ease;cursor:pointer}
+  .grille .carte:hover{transform:scale(1.06);box-shadow:0 22px 44px rgba(47,42,43,.18);z-index:2;position:relative}
+  .photo{transition:transform .6s ease}
+  .grille .carte:hover .photo{transform:scale(1.1)}
+  .photo-wrap{overflow:hidden;margin:-1.8rem -1.8rem 1.2rem}
+  .photo-wrap .photo{margin:0;width:100%}
+  .etape{transition:transform .3s}
+  .etape:hover{transform:translateY(-6px)}
+  .infos .carte{transition:transform .3s,box-shadow .3s}
+  .infos .carte:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(47,42,43,.12)}
+  /* Formulaire + carte */
+  .contact-zone{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem;margin-top:1.4rem}
+  .form{background:#fff;border-radius:18px;padding:1.8rem;box-shadow:0 8px 24px rgba(47,42,43,.06)}
+  .form h3{font-size:1.6rem;margin-bottom:1rem}
+  .form label{display:block;font-weight:600;font-size:.9rem;margin:.7rem 0 .3rem}
+  .form input,.form select,.form textarea{width:100%;padding:.75rem .9rem;border:1.5px solid #e6dcd6;border-radius:10px;font:inherit;background:var(--creme);transition:border-color .2s,box-shadow .2s}
+  .form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(200,80,106,.15)}
+  .form textarea{min-height:110px;resize:vertical}
+  .form .btn{border:0;cursor:pointer;margin:1.1rem 0 0;font:inherit;font-weight:700}
+  .form-note{display:none;margin-top:.8rem;color:var(--sauge);font-weight:600}
+  .map{position:relative;border-radius:18px;overflow:hidden;min-height:420px;box-shadow:0 8px 24px rgba(47,42,43,.06)}
+  .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  footer{background:var(--encre);color:#d9cfd1;text-align:center;padding:2rem 1rem;font-size:.9rem}
+  @media(max-width:640px){nav a{margin-left:.8rem;font-size:.85rem} .nav{flex-direction:column;gap:.4rem} .grille .carte:hover{transform:scale(1.03)}}
+</style>
+</head>
+<body>
+
+<div class="maquette">Maquette de démonstration proposée par Kylian Viller · Ce n'est pas le site officiel de la boutique</div>
+
+<header>
+  <div class="nav">
+    <a class="marque" href="#"><span class="logo-box">Votre<br>logo</span><span class="logo">Bar à <span>Fleurs</span></span></a>
+    <nav>
+      <a href="#creations">Créations</a>
+      <a href="#evenements">Événements</a>
+      <a href="#abonnement">Abonnements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="petale p1"></div><div class="petale p2"></div><div class="petale p3"></div>
+  <div class="badge">Réouverture prochainement – nouvelle équipe</div>
+  <h1>Votre artisan fleuriste<br>à <em>Grandvillars</em></h1>
+  <p>Bouquets de saison, plantes, compositions pour tous les moments de la vie : on vous accueille en boutique et on livre chez vous.</p>
+  <a class="btn" href="#contact">Commander un bouquet</a>
+  <a class="btn alt" href="#creations">Découvrir nos créations</a>
+</section>
+
+<section id="creations">
+  <div class="wrap">
+    <div class="titre"><h2>Nos créations</h2><p>Des fleurs fraîches, choisies et composées à la main.</p></div>
+    <div class="grille">
+      <div class="carte"><div class="photo-wrap"><img class="photo" src="https://images.unsplash.com/photo-1494336850228-54adc1dd87ad?w=800&h=560&fit=crop&q=70&auto=format" alt="Bouquet de fleurs emballé dans du papier kraft" loading="lazy"></div><h3>Bouquets</h3><p>Bouquets de saison, ronds ou champêtres, composés sur place selon vos envies et votre budget.</p></div>
+      <div class="carte"><div class="photo-wrap"><img class="photo" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=800&h=560&fit=crop&q=70&auto=format" alt="Plantes vertes en pots alignées devant une fenêtre" loading="lazy"></div><h3>Plantes</h3><p>Plantes vertes et fleuries pour la maison ou le bureau, avec nos conseils d'entretien.</p></div>
+      <div class="carte"><div class="photo-wrap"><img class="photo" src="https://images.unsplash.com/photo-1681497885087-1e626f1e7312?w=800&h=560&fit=crop&q=70&auto=format" alt="Bougie allumée entourée de roses blanches" loading="lazy"></div><h3>Déco & bougies</h3><p>Objets de décoration, bougies et compositions pour embellir votre intérieur.</p></div>
+      <div class="carte"><div class="photo-wrap"><img class="photo" src="https://images.unsplash.com/photo-1587052755556-89808205c097?w=800&h=560&fit=crop&q=70&auto=format" alt="Rose rouge posée sur un paquet cadeau en kraft" loading="lazy"></div><h3>Cartes cadeaux</h3><p>Le cadeau qui fait toujours plaisir : offrez des fleurs, la personne choisit son bouquet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="evenements" class="bande">
+  <div class="wrap">
+    <div class="titre"><h2>Pour vos grands moments</h2><p>On vous accompagne de la première idée à la livraison.</p></div>
+    <div class="grille">
+      <div class="carte" style="color:var(--encre)"><div class="photo-wrap"><img class="photo" src="https://images.unsplash.com/photo-1521543832500-49e69fb2bea2?w=800&h=560&fit=crop&q=70&auto=format" alt="Mariée tenant son bouquet" loading="lazy"></div><h3>Mariage</h3><p>Bouquet de mariée, boutonnières, décoration de salle et de voiture.</p></div>
+      <div class="carte" style="color:var(--encre)"><div class="photo-wrap"><img class="photo" src="https://images.unsplash.com/photo-1478798868346-68cef4fe6c9d?w=800&h=560&fit=crop&q=70&auto=format" alt="Pieds d'un nouveau-né" loading="lazy"></div><h3>Baptême & naissance</h3><p>Compositions douces et colorées pour célébrer l'arrivée d'un enfant.</p></div>
+      <div class="carte" style="color:var(--encre)"><div class="photo-wrap"><img class="photo" src="https://images.unsplash.com/photo-1635778937014-6e3a980ffe07?w=800&h=560&fit=crop&q=70&auto=format" alt="Gerbera jaune posé sur une carte d'anniversaire" loading="lazy"></div><h3>Anniversaire</h3><p>Un bouquet personnalisé, livré à la bonne adresse, au bon moment.</p></div>
+      <div class="carte" style="color:var(--encre)"><div class="photo-wrap"><img class="photo" src="https://images.unsplash.com/photo-1567428051128-5f09a0200655?w=800&h=560&fit=crop&q=70&auto=format" alt="Lys blancs" loading="lazy"></div><h3>Deuil</h3><p>Gerbes, couronnes et compositions, avec délicatesse. Livraison au funérarium.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="titre"><h2>Comment commander ?</h2></div>
+    <div class="etapes">
+      <div class="etape"><div class="num" style="background:var(--rose-clair);color:var(--rose)">1</div><h3>En boutique</h3><p>Venez choisir vos fleurs, on compose devant vous.</p></div>
+      <div class="etape"><div class="num" style="background:var(--rose-clair);color:var(--rose)">2</div><h3>Par téléphone</h3><p>Dites-nous l'occasion et le budget, on s'occupe du reste.</p></div>
+      <div class="etape"><div class="num" style="background:var(--rose-clair);color:var(--rose)">3</div><h3>Sur Instagram</h3><p>Envoyez-nous un message, on vous répond rapidement.</p></div>
+      <div class="etape"><div class="num" style="background:var(--rose-clair);color:var(--rose)">4</div><h3>Livraison</h3><p>À domicile ou au funérarium, dans le secteur de Grandvillars.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="abonnement" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="abo">
+      <div class="txt">
+        <h2>L'abonnement floral</h2>
+        <p>Des fleurs fraîches chez vous ou dans vos locaux, toutes les semaines ou tous les mois, sans y penser.</p>
+        <ul>
+          <li>Pour la maison, le bureau, un commerce ou un restaurant</li>
+          <li>Un bouquet différent à chaque saison</li>
+          <li>Fréquence et budget au choix</li>
+        </ul>
+        <a class="btn" href="#contact">Demander un devis</a>
+      </div>
+      <div class="bouquet" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--rose-clair)">
+  <div class="wrap">
+    <div class="titre"><h2>Nous trouver</h2><p>On a hâte de vous accueillir.</p></div>
+    <div class="infos">
+      <div class="carte"><h3>Adresse</h3><p class="ph">[Adresse de la boutique]</p><p>Grandvillars</p></div>
+      <div class="carte"><h3>Contact</h3><p>Téléphone : <span class="ph">[Votre numéro]</span></p><p>Instagram : <span class="ph">[@votre compte]</span></p></div>
+      <div class="carte"><h3>Horaires</h3><p class="ph">[Vos horaires d'ouverture]</p><p>Réouverture : <span class="ph">[date]</span></p></div>
+    </div>
+    <div class="contact-zone">
+      <form class="form" onsubmit="event.preventDefault();this.querySelector('.form-note').style.display='block'">
+        <h3>Une demande ? Écrivez-nous</h3>
+        <label for="nom">Nom</label>
+        <input id="nom" type="text" placeholder="Votre nom" required>
+        <label for="tel">Téléphone ou e-mail</label>
+        <input id="tel" type="text" placeholder="Pour vous recontacter" required>
+        <label for="occasion">Occasion</label>
+        <select id="occasion">
+          <option>Bouquet</option><option>Mariage</option><option>Baptême / naissance</option>
+          <option>Anniversaire</option><option>Deuil</option><option>Abonnement floral</option><option>Autre</option>
+        </select>
+        <label for="msg">Votre message</label>
+        <textarea id="msg" placeholder="Date, budget, couleurs souhaitées..."></textarea>
+        <button class="btn" type="submit">Envoyer ma demande</button>
+        <p class="form-note">Maquette : le formulaire sera relié à votre boîte mail sur le vrai site.</p>
+      </form>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Grandvillars%2090600&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation de la boutique"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Maquette © 2026 Kylian Viller, développeur web à Belfort · Proposition non officielle · Photos : Unsplash</p>
+</footer>
+
+</body>
+</html>
