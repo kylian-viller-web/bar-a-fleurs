@@ -139,9 +139,20 @@
     .form{padding:1.4rem}
     .form .btn{max-width:none}
     .map,.map iframe{min-height:300px}
-    footer{font-size:.8rem;padding:1.5rem 1rem}
+    .reseaux{display:flex;justify-content:center;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:1.2rem}
+  .suivez{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#fff;margin-right:.3rem}
+  .reseau{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.1rem;border:1.5px solid #6b6062;border-radius:999px;color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;transition:background .2s,border-color .2s,transform .2s}
+  .reseau svg{width:18px;height:18px;fill:currentColor}
+  .reseau:hover{background:var(--rose);border-color:var(--rose);transform:translateY(-2px)}
+  footer{font-size:.8rem;padding:1.5rem 1rem}
   }
+  .reseaux{display:flex;justify-content:center;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:1.2rem}
+  .suivez{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#fff;margin-right:.3rem}
+  .reseau{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.1rem;border:1.5px solid #6b6062;border-radius:999px;color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;transition:background .2s,border-color .2s,transform .2s}
+  .reseau svg{width:18px;height:18px;fill:currentColor}
+  .reseau:hover{background:var(--rose);border-color:var(--rose);transform:translateY(-2px)}
   footer{background:var(--encre);color:#d9cfd1;text-align:center;padding:2rem 1rem;font-size:.9rem}
+  @media (max-width:760px){footer{font-size:.8rem;padding:1.6rem 1rem} .suivez{width:100%;text-align:center;margin:0 0 .2rem}}
   
 </style>
 </head>
@@ -257,6 +268,11 @@
 </section>
 
 <footer>
+  <div class="reseaux">
+    <span class="suivez">Suivez-nous</span>
+    <a class="reseau" href="#" aria-label="Instagram de la boutique"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7-9h-2.2l-1.2-1.6A1 1 0 0 0 14.8 4H9.2a1 1 0 0 0-.8.4L7.2 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Zm-7 11a5 5 0 1 1 0-10 5 5 0 0 1 0 10Z"/></svg>Instagram</a>
+    <a class="reseau" href="#" aria-label="Facebook de la boutique"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 14.2a8.2 8.2 0 0 1-6.3-3c.1-2 4.2-3.2 6.3-3.2s6.2 1.1 6.3 3.2a8.2 8.2 0 0 1-6.3 3Z"/></svg>Facebook</a>
+  </div>
   <p>Maquette © 2026 Kylian Viller, développeur web à Belfort · Proposition non officielle · Photos : Unsplash</p>
 </footer>
 
