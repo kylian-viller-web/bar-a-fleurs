@@ -26,10 +26,10 @@
   .logo span{color:var(--sauge)}
   nav a{text-decoration:none;margin-left:1.4rem;font-weight:600;font-size:.95rem;color:var(--gris)}
   nav a:hover{color:var(--rose)}
-  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--rose-clair),var(--sauge-clair));padding:5.5rem 1.25rem 6rem;text-align:center}
-  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);color:var(--encre)}
-  .hero h1 em{color:var(--rose);font-style:italic}
-  .hero p{max-width:620px;margin:1.2rem auto 2rem;font-size:1.15rem;color:var(--gris)}
+  .hero{position:relative;overflow:hidden;background:linear-gradient(rgba(47,42,43,.55),rgba(47,42,43,.45)),url("https://images.unsplash.com/photo-1565695951564-007d8f297e48?w=1920&h=900&fit=crop&q=70&auto=format") center/cover no-repeat;padding:7rem 1.25rem 7.5rem;text-align:center}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .hero h1 em{color:#f7c3cf;font-style:italic}
+  .hero p{max-width:620px;margin:1.2rem auto 2rem;font-size:1.15rem;color:#f5efec;text-shadow:0 1px 8px rgba(0,0,0,.4)}
   .badge{display:inline-block;background:#fff;color:var(--rose);font-weight:700;border-radius:999px;padding:.4rem 1.1rem;margin-bottom:1.4rem;font-size:.9rem;box-shadow:0 4px 14px rgba(200,80,106,.15)}
   .btn{display:inline-block;background:var(--rose);color:#fff;text-decoration:none;font-weight:700;padding:.85rem 1.8rem;border-radius:999px;margin:.3rem;transition:transform .15s}
   .btn:hover{transform:translateY(-2px)}
@@ -117,8 +117,7 @@
 </header>
 
 <section class="hero">
-  <div class="petale p1"></div><div class="petale p2"></div><div class="petale p3"></div>
-  <div class="badge">Réouverture prochainement – nouvelle équipe</div>
+    <div class="badge">Réouverture prochainement – nouvelle équipe</div>
   <h1>Votre artisan fleuriste<br>à <em>Grandvillars</em></h1>
   <p>Bouquets de saison, plantes, compositions pour tous les moments de la vie : on vous accueille en boutique et on livre chez vous.</p>
   <a class="btn" href="#contact">Commander un bouquet</a>
